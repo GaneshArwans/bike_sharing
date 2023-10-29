@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import datetime
+from pathlib import Path
 
 def sidebar(df):
     df["dteday"] = pd.to_datetime(df["dteday"])
@@ -52,8 +53,8 @@ if __name__ == "__main__":
     sns.set(style="dark")
     st.header("Bike Sharing Streamlit Dashboard")
 
-    day_df = pd.read_csv("dashboard/day_clean.csv")
-    hour_df = pd.read_csv('dashboard/hour_clean.csv')
+    day_df = pd.read_csv(Path(__file__).parents[1] / 'dashboard/day_clean.csv')
+    hour_df = pd.read_csv(Path(__file__).parents[1] / 'dashboard/hour_clean.csv')
 
     date = sidebar(day_df)
     if(len(date) == 2):

@@ -52,8 +52,8 @@ if __name__ == "__main__":
     sns.set(style="dark")
     st.header("Bike Sharing Streamlit Dashboard")
 
-    day_df = pd.read_csv("day_clean.csv")
-    hour_df = pd.read_csv('hour_clean.csv')
+    day_df = pd.read_csv("dashboard/day_clean.csv")
+    hour_df = pd.read_csv('dashboard/hour_clean.csv')
 
     date = sidebar(day_df)
     if(len(date) == 2):
